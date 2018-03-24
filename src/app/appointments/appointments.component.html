@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-sm-2">
+    <p>Appointments</p>
+  </div>
+  <div class="col-sm-10">
+      <mat-form-field class="input-width">
+          <input matInput [matDatepicker]="picker1" placeholder="start">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="input-width">
+            <input matInput [matDatepicker]="picker2" placeholder="end">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+          <button mat-raised-button color="primary">
+              <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+          </button>
+          <button mat-raised-button color="primary">Primary</button>
+          <button mat-raised-button color="primary">Primary</button>
+          <button mat-raised-button color="primary">Primary</button>
+          <button mat-raised-button color="accent">recent</button>
+    
+    
+    
+  </div>
+</div>
+<div class="row">
+    <div class="card text-white bg-warning mb-3 ml-3" style="max-width: 11rem;" *ngFor="let user of users">
+        <div class="card-header">
+         <div class="row">
+            <div class="col-sm-6">
+              {{user.name}}<br>
+              {{user.id}}
+            </div>
+            <div class="col-sm-6">
+                <img  style="width:50px;height:50px" src="../assets/images/profile_photo.png" alt="image">                  
+              </div>
+         </div>
+        </div>
+        <div class="card-body">
+          <div>{{user.date}}</div>
+          <div>{{user.status}}</div>
+        </div>
+      </div>
+</div>

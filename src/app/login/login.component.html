@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="img-center">
+    <img src="../assets/images/profile_photo.png" alt="images">
+    <p>APPOINTMENT MANAGER</p>
+  </div>
+  <div class="devider"></div>
+          <form [formGroup]="loginForm" (ngSubmit)="loginUserForm()" novalidate>
+              <div class="input-group">
+                <span></span>
+                <input type="email" name="" placeholder="Email" formControlName="email">
+                <i class="fa fa-user"></i>
+                <label>Email</label>
+              </div>
+              <div class="devider"></div>
+              <div class="input-group">
+                <span></span>
+                <input type="password" name="" placeholder="Password" formControlName="pass">
+                <i class="fa fa-lock"></i>
+                <label>Password</label>
+              </div>
+              <div class="input-group">
+                <button mat-raised-button color="accent" type="submit">Login</button>
+                <hr>
+              </div>
+        </form>
+<div class="devider"></div>
+<div class="navigation">
+  <a routerLink="/register" >REGISTER NOW!
+</a>
+  <a routerLink="/forgotpass" >FORGOT PASSWORD ?</a>
+</div>
+</div>

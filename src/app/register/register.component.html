@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="form-title">
+    <p>Join Now</p>
+  </div>
+  <div class="devider"></div>
+  <form class="form-container" [formGroup]='registerForm' (ngSubmit)="registerFormDetails()" novalidate>
+      <div class="input-continer">
+            <div class="input-group">                
+                <input type="text" name="" placeholder="First Name" formControlName="fname"> 
+                <span class="fa fa-pencil-alt"></span>
+                <label>FirstName*</label>
+              </div>
+              
+              <div class="input-group">                
+                <input type="text" name="" placeholder="Last Name" formControlName="lname">           
+                  <span class="fa fa-pencil-alt"></span>
+                  <label>LastName*</label>               
+              </div>
+      </div>
+      <div class="devider"></div>
+      <div class="input-continer">
+            <div class="input-group">                
+                <input type="email" name="" placeholder="Email" formControlName="email">
+                <span class="fa fa-user"></span>
+                <label>Email*</label>
+              </div>
+              
+              <div class="input-group">                
+                <input type="password" name="" placeholder="Password" formControlName="pass">           
+                  <span class="fa fa-lock"></span>
+                  <label>PassWord*</label>               
+              </div>
+          </div>
+      
+        <mat-form-field class="input-group">
+          <label>Select role*</label>
+            <mat-select [(value)]="selected" placeholder="Select Role" formControlName="role">
+               <mat-option [disabled]="true" style="color:#ddd ">Select you profile</mat-option>
+              <mat-option value="patient">Patient</mat-option>
+              <mat-option value="physician" >Physician</mat-option>              
+            </mat-select>
+            <span class="fa fa-pencil-alt"></span>
+          </mat-form-field>
+      
+      
+      <div class="devider" *ngIf=" selected === 'physician' "></div>
+      <div class="physician" *ngIf=" selected === 'physician' ">
+        
+      <div class="devider"></div>
+      <div class="input-continer">
+            <div class="input-group">                
+                <input type="text" name="" placeholder="NPI" formControlName="npi">
+                <span class="fa fa-pencil-alt"></span>
+                <label>NPI*</label>
+              </div>
+              
+              <div class="input-group">                
+                <input type="text" name="" placeholder="Location" formControlName="location">           
+                  <span class="fa fa-pencil-alt"></span>
+                  <label>Location*</label>               
+              </div>
+      </div>
+       <div class="devider"></div>
+      <div class="input-continer">
+            <div class="input-group">                
+                <input type="text" name="" placeholder="Address1" formControlName="add1">
+                <span class="fa fa-pencil-alt"></span>
+                <label>Address1</label>
+              </div>
+              
+              <div class="input-group">                
+                <input type="text" name="" placeholder="Address2" formControlName="add2">           
+                  <span class="fa fa-pencil-alt"></span>
+                  <label>Address2*</label>               
+              </div>
+      </div>
+      <div class="devider"></div>
+      <div class="input-continer">
+            <div class="input-group">                
+                <input type="text" name="" placeholder="City" formControlName="city">
+                <span class="fa fa-pencil-alt"></span>
+                <label>city</label>
+              </div>
+              
+              <div class="input-group">                
+                <input type="text" name="" placeholder="PinCode" formControlName="pincode">           
+                  <span class="fa fa-pencil-alt"></span>
+                  <label>PinCode*</label>               
+              </div>
+      </div>
+       <div class="devider"></div>
+      <div class="input-continer">
+            <div class="input-group">                
+                <input type="text" name="" placeholder="State" formControlName="state">
+                <span class="fa fa-pencil-alt"></span>
+                <label>State</label>
+              </div>
+              
+              <div class="input-group">                
+                <input type="text" name="" placeholder="Country" formControlName="country">           
+                  <span class="fa fa-pencil-alt"></span>
+                  <label>Country</label>               
+              </div>
+      </div>
+      </div>
+      <div class="devider"></div>
+      <div class="input-group">
+        <button mat-raised-button color="accent" type="submit">Sign Up</button>
+      </div>
+</form>
+<div class="navigation">
+  <p>Already have an account?</p><a routerLink="/login">Login</a>
+</div>
+</div>

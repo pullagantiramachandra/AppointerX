@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-12 bg-primary">
+    <div class="card">
+    <div class="card-header ">
+      <div class="row">
+        <div class="col-sm-6">
+            <h3>Physician's Appointments</h3>
+            {{date}}
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field>
+            <mat-select placeholder="Select doctor" [formControl]="doctorControl" required>
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let doctor of doctors" [value]="doctor">
+                {{doctor.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="doctorControl.hasError('required')">Please choose an doctor</mat-error>
+            <mat-hint>{{doctorControl.value?.sound}}</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      
+    </div>
+    </div>
+  </div>
+</div>

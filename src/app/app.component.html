@@ -1,0 +1,49 @@
+
+     <app-header></app-header>
+      <div class="container-fluid mt">
+        <div class="row position-relative">
+            <div class="col-sm-3 mr-0 card position-fixed "  *ngIf='login'>
+                        <div class="card mr-0 bg-primary text-white">
+                                
+                                <div class="card-body">
+                                                
+                                        <img class="card-img-top  ml-2 mr-4" style="width:50px;height:50px" src="../assets/images/profile_photo.png" alt="image">
+                                        {{welcomemessage}}<br>
+                                        {{profile}}
+                                        <button class="ml-3" mat-icon-button [matMenuTriggerFor]="menu" yPosition="above">
+                                                <mat-icon>expand_more</mat-icon>
+                                              </button>
+                                              <mat-menu #menu="matMenu">
+                                                <button mat-menu-item>
+                                                  <mat-icon>tune</mat-icon>
+                                                  <span>Setting</span>
+                                                </button>
+                                                <button mat-menu-item >
+                                                  <img src="../assets/images/arrow-collapse-right.png">
+                                                  <span class="ml-3">LogOut</span>
+                                                </button>
+                                                
+                                              </mat-menu>
+                                </div>
+                         </div>
+                    <ul class="nav flex-column">
+                           
+                            <li class="nav-item">
+                                   
+                                    <a class="nav-link  text-muted" routerLink="/calender"><i class="far fa-calendar-alt mr-2"></i>calender</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link  text-muted" routerLink="/appointments"><i class="fas fa-calendar-alt mr-2"></i>appointments</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link  text-muted" routerLink="/help"><i class="fab fa-hire-a-helper mr-2"></i>help/guide</a>
+                            </li>
+                          
+                          </ul>
+            </div>
+            <div class="col-sm-9 card position-relative custom-left">
+                    <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+  
